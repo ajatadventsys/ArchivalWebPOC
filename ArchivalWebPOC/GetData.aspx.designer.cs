@@ -85,13 +85,13 @@ namespace ArchivalWebPOC {
         protected global::DevExpress.Web.ASPxButton ASPxButton1;
         
         /// <summary>
-        /// AddTask control.
+        /// ASPxLabel4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLabel AddTask;
+        protected global::DevExpress.Web.ASPxLabel ASPxLabel4;
         
         /// <summary>
         /// TaskDetails control.

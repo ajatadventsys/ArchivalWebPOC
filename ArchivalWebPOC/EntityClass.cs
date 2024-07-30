@@ -1,10 +1,22 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
+//ProjectCode
+public class PS_LISProject
+{
+    [Key]
+    public long SystemId { get; set; }
+
+    public string ProjectCode { get; set; }
+    public bool? IsActive { get; set; }
+}
+
 //New Table Archival_Schedule
 public class ArchivalSchedule
 {
+    [Key]
     public long? SystemId { get; set; }
+
     public string ProjectCode { get; set; }
     public DateTime? FromDate { get; set; }
     public DateTime? ToDate { get; set; }

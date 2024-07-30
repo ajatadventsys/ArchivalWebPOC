@@ -1,7 +1,10 @@
 ﻿using System.Data.Entity;
 
-public class LIMSDevContext : DbContext
+public class LIMSDevConnectionString : DbContext
 {
+    //ProjectCode
+    public DbSet<PS_LISProject> PS_LISProjects { get; set; }
+
     //New Table
     public DbSet<ArchivalSchedule> ArchivalSchedules { get; set; }
 
@@ -12,15 +15,18 @@ public class LIMSDevContext : DbContext
     public DbSet<RegistrationInfoArchival> RegistrationInfoArchivals { get; set; }
     public DbSet<AutoApprovalLogArchival> AutoApprovalLogArchivals { get; set; }
 
-    public LIMSDevContext() : base("name=LIMSDevContext")
+    public LIMSDevConnectionString() : base("name=LIMSDevConnectionString")
     {
         //if it is set then EF will not create DB if does not exist 
-        Database.SetInitializer<LIMSDevContext>(null);
+        Database.SetInitializer<LIMSDevConnectionString>(null);
     }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+
+        //ProjectCode
+        modelBuilder.Entity<PS_LISProject>().ToTable("PS_LISProject");
 
         //New Table
         modelBuilder.Entity<ArchivalSchedule>().ToTable("Archival_Schedule");

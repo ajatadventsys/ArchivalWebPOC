@@ -27,16 +27,27 @@
             <dx:ASPxDateEdit ID="ToDateAdd" runat="server">
             </dx:ASPxDateEdit>
             <br />
-            <dx:ASPxButton ID="ASPxButton1" runat="server" Text="Add">
+            <dx:ASPxButton ID="ASPxButton1" runat="server" OnClick="AddTask_Click" Text="Add">
             </dx:ASPxButton>
             <br />
-            <dx:ASPxLabel ID="AddTask" runat="server" Text="Archival Task Details">
+            <dx:ASPxLabel ID="ASPxLabel4" runat="server" Text="Archival Task Details">
             </dx:ASPxLabel>
             <br />
             <dx:ASPxGridView ID="TaskDetails" runat="server">
-<SettingsPopup>
-<FilterControl AutoUpdatePosition="False"></FilterControl>
-</SettingsPopup>
+               <SettingsPopup>
+                  <FilterControl AutoUpdatePosition="False"></FilterControl>
+               </SettingsPopup>
+               <Columns>
+                <dx:GridViewDataTextColumn FieldName="SystemId" Caption="SystemId" VisibleIndex="2" />
+                <dx:GridViewDataTextColumn FieldName="ProjectCode" Caption="ProjectCode" VisibleIndex="3" />
+                   <dx:GridViewDataTextColumn FieldName="FromDate" Caption="FromDate" VisibleIndex="4" />
+                   <dx:GridViewDataTextColumn FieldName="ToDate" Caption="ToDate" VisibleIndex="5" />
+                   <dx:GridViewDataTextColumn FieldName="Status" Caption="Status" VisibleIndex="6" />
+                   <dx:GridViewDataTextColumn FieldName="CreatedOn" Caption="CreatedOn" VisibleIndex="7" />
+                   <dx:GridViewDataTextColumn FieldName="CreatedBy" Caption="CreatedBy" VisibleIndex="8" />
+                   <dx:GridViewDataTextColumn FieldName="Remarks" Caption="Remarks" VisibleIndex="9" />
+                   <dx:GridViewDataTextColumn FieldName="LastUpdate" Caption="LastUpdate" VisibleIndex="10" />
+               </Columns>
             </dx:ASPxGridView>
             <br />
             <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="Table Select">
